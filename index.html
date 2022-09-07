@@ -201,7 +201,7 @@
 							<p>Descrizione</p>
 							<div class="split style1">
 								<section>
-									<form method="POST" action="https://formsubmit.co/bb6e9b2bc7d3b52141dd9c699c8bebbf">
+									<form method="POST" action="https://formsubmit.co/bb6e9b2bc7d3b52141dd9c699c8bebbf" name="myForm" onsubmit="return validateForm()>
 										<div class="fields">
 											<div class="field half">
 												<label for="name">Nome</label>
@@ -261,6 +261,19 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function validateForm() {
+					var x = document.forms["myForm"]["name"].value;
+					var y = document.forms["myForm"]["email"].value;
+					var z = document.forms["myForm"]["message"].value;
+					if (x == "" || y == "" || z == "") {
+					  alert("Errore, una o più barre sono vuote");
+					  return false;
+					} else{
+						alert("Attendi un attimo dopo ok");
+						return true;}
+				}
+			</script>
 
 	</body>
 </html>
